@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="SyncPetPU" transaction-type="JTA">
+    <jta-data-source>syncpet_sqlexpress</jta-data-source>
+    <class>modelo.Especie</class>
+    <class>modelo.Hospitalizacion</class>
+    <class>modelo.Historialvacunas</class>
+    <class>modelo.TipoAlergia</class>
+    <class>modelo.Examenes</class>
+    <class>modelo.Veterinario</class>
+    <class>modelo.Farmacos</class>
+    <class>modelo.AgendaDetalle</class>
+    <class>modelo.Desparacitaciones</class>
+    <class>modelo.Sucursal</class>
+    <class>modelo.TipoProcedimiento</class>
+    <class>modelo.Pais</class>
+    <class>modelo.Perfiles</class>
+    <class>modelo.Procedimientos</class>
+    <class>modelo.Provincia</class>
+    <class>modelo.Region</class>
+    <class>modelo.DetalleUsuarios</class>
+    <class>modelo.Patologias</class>
+    <class>modelo.Caracter</class>
+    <class>modelo.Alergias</class>
+    <class>modelo.Agenda</class>
+    <class>modelo.Usuarios</class>
+    <class>modelo.Mascota</class>
+    <class>modelo.TipoExamen</class>
+    <class>modelo.Clinica</class>
+    <class>modelo.Raza</class>
+    <class>modelo.Anamnesis</class>
+    <class>modelo.TipoFarmaco</class>
+    <class>modelo.Vacunas</class>
+    <class>modelo.Propietario</class>
+    <class>modelo.TipoContraindicacion</class>
+    <class>modelo.Habitad</class>
+    <class>modelo.Contraindicaciones</class>
+    <class>modelo.Comuna</class>
+    <class>modelo.TipoPatologia</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
