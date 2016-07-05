@@ -13,6 +13,10 @@
     <service name="SrvMascotas">
       <implementation-class>servicios.SrvMascotas</implementation-class>
     </service>
+    <service name="SrvAgendamiento">
+      <implementation-class>servicios.SrvAgendamiento</implementation-class>
+    </service>
   </services>
-  <clients/>
+  <clients>
+  </clients>
 </jax-ws>

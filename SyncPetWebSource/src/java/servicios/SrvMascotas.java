@@ -120,4 +120,12 @@ public class SrvMascotas {
         }
     }
 
+   @WebMethod(operationName = "buscarMascotaById")
+    public Mascota buscarMascotaById(@WebParam(name = "id") int id) {
+        try {
+            return new MascotaJpaController(emf).findMascota(id);
+        }catch(Exception e) {
+            return null;
+        }
+    }
 }

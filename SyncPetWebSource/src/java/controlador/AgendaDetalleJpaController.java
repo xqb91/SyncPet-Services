@@ -286,6 +286,7 @@ public class AgendaDetalleJpaController implements Serializable {
         }
     }
     
+    
     public Integer ultimo() {
         try {
             Query consulta = getEntityManager().createNamedQuery("AgendaDetalle.findAllDesc");
