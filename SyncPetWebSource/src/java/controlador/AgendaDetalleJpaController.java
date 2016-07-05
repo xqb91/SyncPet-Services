@@ -297,4 +297,15 @@ public class AgendaDetalleJpaController implements Serializable {
         }
     }
     
+    public AgendaDetalle buscarPorAgenda(Agenda a) {
+        try {
+            Query consulta = getEntityManager().createNamedQuery("AgendaDetalle.findByAgenda");
+            consulta.setParameter("agenda", a);
+            consulta.setMaxResults(1);
+            return (AgendaDetalle)consulta.getSingleResult();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
 }

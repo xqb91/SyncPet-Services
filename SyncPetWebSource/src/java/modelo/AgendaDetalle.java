@@ -28,6 +28,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "AgendaDetalle.findAll", query = "SELECT a FROM AgendaDetalle a"),
     @NamedQuery(name = "AgendaDetalle.findAllDesc", query = "SELECT a FROM AgendaDetalle a ORDER BY a.idDetalle DESC"),
     @NamedQuery(name = "AgendaDetalle.findByMascota", query = "SELECT a FROM AgendaDetalle a WHERE a.mascota = :mascota"),
+    @NamedQuery(name = "AgendaDetalle.findByAgenda", query = "SELECT a FROM AgendaDetalle a WHERE a.eventoAgenda = :agenda"),
+    @NamedQuery(name = "AgendaDetalle.findByPropietario", query = "SELECT a FROM AgendaDetalle a WHERE a.mascota.propietario = :propietario ORDER BY a.eventoAgenda.idEvento DESC"),
     @NamedQuery(name = "AgendaDetalle.findByIdDetalle", query = "SELECT a FROM AgendaDetalle a WHERE a.idDetalle = :idDetalle")})
 public class AgendaDetalle implements Serializable {
     private static final long serialVersionUID = 1L;

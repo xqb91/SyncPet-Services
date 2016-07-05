@@ -24,6 +24,7 @@ import modelo.Agenda;
 import modelo.AgendaDetalle;
 import modelo.DetalleUsuarios;
 import modelo.Mascota;
+import modelo.Propietario;
 import modelo.Sucursal;
 import modelo.Veterinario;
 
@@ -104,5 +105,26 @@ public class SrvAgendamiento {
             return false;
         }
     }    
+    
+    @WebMethod(operationName = "ultimoEventoRegistrado")
+    public Agenda ultimoEventoRegistrado(@WebParam(name = "pro") Propietario pro) {
+        try {
+            AgendaJpaController jpa = new AgendaJpaController(emf);
+            return jpa.ultimaAtencionAgendada(pro);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
+    @WebMethod(operationName = "detalleUltimoEventoRegistrado")
+    public AgendaDetalle detalleUltimoEventoRegistrado(@WebParam(name = "pro") Propietario pro) {
+        try {
+            Agenda ag = this.ultimoEventoRegistrado(pro);
+            AgendaDetalleJpaController jpa = new AgendaDetalleJpaController(emf);
+            return  jpa.buscarPorAgenda(ag);
+        } catch (Exception e) {
+            return null;
+        }
+    }
     
 }

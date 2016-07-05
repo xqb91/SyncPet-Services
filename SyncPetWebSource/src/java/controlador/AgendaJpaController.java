@@ -21,6 +21,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import modelo.Propietario;
 
 /**
  *
@@ -265,6 +266,17 @@ public class AgendaJpaController implements Serializable {
             return ((Agenda)consulta.getSingleResult()).getIdEvento()+1;
         } catch (Exception e) {
             return 1;
+        }
+    }
+    
+    public Agenda ultimaAtencionAgendada(Propietario pro) {
+        try {
+            Query consulta = getEntityManager().createNamedQuery("AgendaDetalle.findByPropietario");
+            consulta.setParameter("propietario", pro);
+            consulta.setMaxResults(1);
+            return ((AgendaDetalle)consulta.getSingleResult()).getEventoAgenda();
+        } catch (Exception e) {
+            return null;
         }
     }
     
